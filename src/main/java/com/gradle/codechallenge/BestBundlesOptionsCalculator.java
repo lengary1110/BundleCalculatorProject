@@ -1,8 +1,9 @@
-package com.gradle.tutorial;
+package com.gradle.codechallenge;
 
 import java.util.List;
 
-public class FindBestBundlesOptions {
+public class BestBundlesOptionsCalculator {
+
     public int[] find(int n, List<Integer> bundlesOptions) {
         int[] num = new int[n + 1];
         int[] index = new int[n + 1];

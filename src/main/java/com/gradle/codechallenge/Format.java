@@ -1,4 +1,4 @@
-package com.gradle.tutorial;
+package com.gradle.codechallenge;
 
 import java.util.ArrayList;
 import java.util.HashMap;

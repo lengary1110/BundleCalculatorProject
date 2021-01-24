@@ -1,15 +1,16 @@
-package com.gradle.tutorial;
+package com.gradle.codechallenge;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Input {
+public class OrderInput {
 
     Scanner inputStream = null;
     String inputFilename = "input.txt";
 
     public Scanner input() {
+
         try {
             inputStream = new Scanner(new FileInputStream(inputFilename));
         } catch (FileNotFoundException e) {

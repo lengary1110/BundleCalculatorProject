@@ -1,16 +1,17 @@
-package com.gradle.tutorial;
+package com.gradle.codechallenge;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindBestBundlesOptionsTest {
+public class BestBundlesOptionsCalculatorTest {
 
     @Test
-    public void testFindBestBundlesOptions(){
+    public void testFindBestBundlesOptions() {
 
         List<Integer> testBundlesOptions = new ArrayList<>();
 
@@ -20,9 +21,9 @@ public class FindBestBundlesOptionsTest {
 
         int[] expectedIndex = {0, -1, 1, 0, 2, 1, 0};
 
-        FindBestBundlesOptions fb = new FindBestBundlesOptions();
+        BestBundlesOptionsCalculator matcher = new BestBundlesOptionsCalculator();
 
-        assertEquals(Arrays.toString(expectedIndex),Arrays.toString(fb.find(6,testBundlesOptions)));
+        assertEquals(Arrays.toString(expectedIndex), Arrays.toString(matcher.find(6, testBundlesOptions)));
 
     }
 
