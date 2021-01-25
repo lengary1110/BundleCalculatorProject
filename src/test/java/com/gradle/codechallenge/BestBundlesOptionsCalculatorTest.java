@@ -13,17 +13,17 @@ public class BestBundlesOptionsCalculatorTest {
     @Test
     public void testFindBestBundlesOptions() {
 
-        List<Integer> testBundlesOptions = new ArrayList<>();
-
-        testBundlesOptions.add(3);
-        testBundlesOptions.add(2);
-        testBundlesOptions.add(4);
+        Format format = new Format();
+        format.setFormatType("GIF");
+        format.addBundles(3, 550.0);
+        format.addBundles(2, 750.0);
+        format.addBundles(2, 1000.0);
 
         int[] expectedIndex = {0, -1, 1, 0, 2, 1, 0};
 
         BestBundlesOptionsCalculator matcher = new BestBundlesOptionsCalculator();
 
-        assertEquals(Arrays.toString(expectedIndex), Arrays.toString(matcher.find(6, testBundlesOptions)));
+        assertEquals(Arrays.toString(expectedIndex), Arrays.toString(matcher.find(6,format.getBundlesOptions())));
 
     }
 

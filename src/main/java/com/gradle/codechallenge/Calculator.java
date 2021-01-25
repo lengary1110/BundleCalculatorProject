@@ -35,13 +35,12 @@ public class Calculator {
 
         formatTable.formatList.stream().filter(ft -> ft.getFormatType().equals(formatType)).forEach(ft -> {
             BestBundlesOptionsCalculator cal = new BestBundlesOptionsCalculator();
-            cal.find(n, ft.getBundlesOptions(ft.getFormatMap()));
             ResultPrinter pr = new ResultPrinter();
-            pr.print(cal.find(n, ft.getBundlesOptions(ft.getFormatMap())), ft.getBundlesOptions(ft.getFormatMap()), ft.getFormatMap());
+            pr.print(cal.find(n, ft.getBundlesOptions()), n, ft);
         });
 
         if (formatTable.formatList.stream().noneMatch(i -> i.getFormatType().equals(formatType))) {
-            System.out.println("Given format does not exist in the format table.");
+            System.out.println("Given format does not exist in the format table.\n");
         }
     }
 }
