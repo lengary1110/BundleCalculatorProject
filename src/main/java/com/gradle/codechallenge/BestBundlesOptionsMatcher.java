@@ -2,7 +2,7 @@ package com.gradle.codechallenge;
 
 import java.util.List;
 
-public class BestBundlesOptionsCalculator {
+public class BestBundlesOptionsMatcher {
 
     public int[] find(int n, List<Integer> bundlesOptions) {
         int[] num = new int[n + 1];

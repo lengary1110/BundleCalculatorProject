@@ -2,21 +2,19 @@ package com.gradle.codechallenge;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.util.Scanner;
+import java.util.List;
 
 public class OrderOutput {
 
     String outputFilename = "output.txt";
 
-
-    public void output(Scanner input) {
+    public void output(List<String> order) {
 
         try {
             PrintStream out = new PrintStream(outputFilename);
             System.setOut(out);
-            FiledOrder pf = new FiledOrder();
-            Calculator calculator = new Calculator();
-            calculator.readFiledOrder(pf.ParseFile(input));
+            BundlesCalculator bundlesCalculator = new BundlesCalculator();
+            bundlesCalculator.readOrder(order);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(0);

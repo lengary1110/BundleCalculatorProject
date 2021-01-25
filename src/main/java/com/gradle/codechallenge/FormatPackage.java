@@ -5,17 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Format {
+public class FormatPackage {
 
-    String formatType;
+    String formatCode;
     Map<Integer, Double> formatMap = new HashMap<>();
 
-    public void setFormatType(String formatType) {
-        this.formatType = formatType;
+    public void setFormatCode(String formatCode) {
+        this.formatCode = formatCode;
     }
 
-    public String getFormatType() {
-        return formatType;
+    public String getFormatCode() {
+        return formatCode;
     }
 
     public void addBundles(Integer bundlesOption, Double bundlePrice) {
