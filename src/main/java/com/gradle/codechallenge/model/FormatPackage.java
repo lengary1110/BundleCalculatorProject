@@ -21,15 +21,15 @@ public class FormatPackage {
         BundleList.add(bundle);
     }
 
+    public void removeBundle(Bundle bundle) {
+        BundleList.remove(bundle);
+    }
+
     public void inputBundle(Integer bundleOption, Double bundlePrice) {
         Bundle inputBundle = new Bundle();
         inputBundle.setBundleOption(bundleOption);
         inputBundle.setBundlePrice(bundlePrice);
         BundleList.add(inputBundle);
-    }
-
-    public void removeBundle(Bundle bundle) {
-        BundleList.remove(bundle);
     }
 
     public List<Bundle> getBundleList() {

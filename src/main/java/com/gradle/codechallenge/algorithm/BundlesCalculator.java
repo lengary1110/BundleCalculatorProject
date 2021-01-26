@@ -18,8 +18,15 @@ public class BundlesCalculator {
 
     public FormatPackage matchFormatPackage(OrderItem orderItem) {
 
-        // TODO: add try catch return null exception
-        // System.out.println("Given format does not exist in the format table.\n");
+        try {
+            if (!map.getFormatPackageMap().containsKey(orderItem.getOrderItemFormatCode())) {
+                throw new Exception(orderItem.getOrderItemFormatCode() + " does not have matched format.");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+
         return map.getFormatPackageMap().get(orderItem.getOrderItemFormatCode());
     }
 
@@ -45,12 +52,17 @@ public class BundlesCalculator {
                 }
             }
         }
-//         TODO: add try catch exception
-//        if (index.length - 1 == -1) {
-//            System.out.println("The order item does not have suitable bundles.\n");
-//        }
 
         int start = index.length - 1;
+
+        try {
+            if (index[start] == -1) {
+                throw new Exception(orderItem.getOrderItemFormatCode() + " does not have suitable bundles.");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
 
         List<Bundle> bestBundles = new ArrayList<>();
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class OrderOutput {
 
     String outputFilename = "output.txt";
-    String outContent;
+    String outContent = "";
 
     public void printToFile() {
 

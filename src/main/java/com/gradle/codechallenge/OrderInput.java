@@ -24,18 +24,21 @@ public class OrderInput {
         return inputStream;
     }
 
-    // TODO: add try catch return exception
-//  System.out.println("This order line is illegal.\n");
     public Order getOrder(Scanner inputStream) {
 
         Order order = new Order();
         while (inputStream.hasNextLine()) {
             String[] subset = inputStream.nextLine().split(" ");
-            if (subset.length == 2) {
-                OrderItem orderItem = new OrderItem();
-                orderItem.setOrderItemDemandNumber(Integer.parseInt(subset[0]));
-                orderItem.setOrderItemFormatCode(subset[1]);
-                order.addOrderItem(orderItem);
+            try {
+                if (subset.length == 2) {
+                    OrderItem orderItem = new OrderItem();
+                    orderItem.setOrderItemDemandNumber(Integer.parseInt(subset[0]));
+                    orderItem.setOrderItemFormatCode(subset[1]);
+                    order.addOrderItem(orderItem);
+                } else
+                    throw new Exception("The order have illegal order item.");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
         return order;
