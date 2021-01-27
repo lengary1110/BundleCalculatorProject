@@ -27,15 +27,15 @@ public class OrderOutput {
 
     public void printInFormat(OrderItem orderItem, List<Bundle> bestBundles) {
 
-        outContent+= orderItem.toString();
+        outContent += orderItem.toString();
 
         bestBundles
                 .forEach(bestBundle ->
-                        outContent+= bestBundle.getBundleOption() + " x " +
-                                bestBundle.getRequiredBundleNum() + " $" + bestBundle.getBundlePrice() * bestBundle.getRequiredBundleNum()+"\n");
+                        outContent += bestBundle.getBundleOption() + " x " +
+                                bestBundle.getRequiredBundleNum() + " $" + bestBundle.getBundlePrice() * bestBundle.getRequiredBundleNum() + "\n");
 
         double totalPrice = bestBundles.stream().mapToDouble(bestBundle -> bestBundle.getRequiredBundleNum() * bestBundle.getBundlePrice()).sum();
 
-        outContent+= "Total: $" + totalPrice + "\n";
+        outContent += "Total: $" + totalPrice + "\n";
     }
 }

@@ -2,6 +2,8 @@ package com.gradle.codechallenge;
 
 import com.gradle.codechallenge.model.Order;
 import com.gradle.codechallenge.model.OrderItem;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +13,7 @@ public class OrderInput {
 
     String inputFilename = "input.txt";
     Scanner inputStream = null;
+    private static final Logger logger = LogManager.getLogger(OrderInput.class);
 
     public Scanner getInputStream() {
 
@@ -35,10 +38,11 @@ public class OrderInput {
                     orderItem.setOrderItemDemandNumber(Integer.parseInt(subset[0]));
                     orderItem.setOrderItemFormatCode(subset[1]);
                     order.addOrderItem(orderItem);
-                } else
-                    throw new Exception("The order have illegal order item.");
+                } else {
+                    throw new Exception("The order has illegal order item.");
+                }
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         }
         return order;

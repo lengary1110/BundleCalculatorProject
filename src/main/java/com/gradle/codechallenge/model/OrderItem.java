@@ -4,6 +4,14 @@ public class OrderItem {
     Integer OrderItemDemandNumber;
     String OrderItemFormatCode;
 
+    public OrderItem() {
+    }
+
+    public OrderItem(Integer DemandNumber, String FormatCode) {
+        OrderItemDemandNumber = DemandNumber;
+        OrderItemFormatCode = FormatCode;
+    }
+
     public Integer getOrderItemDemandNumber() {
         return OrderItemDemandNumber;
     }

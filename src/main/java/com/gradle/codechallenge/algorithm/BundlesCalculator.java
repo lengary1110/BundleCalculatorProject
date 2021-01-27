@@ -4,11 +4,15 @@ import com.gradle.codechallenge.model.Bundle;
 import com.gradle.codechallenge.model.FormatPackage;
 import com.gradle.codechallenge.model.FormatPackageMap;
 import com.gradle.codechallenge.model.OrderItem;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BundlesCalculator {
+
+    private static final Logger logger = LogManager.getLogger(BundlesCalculator.class);
 
     FormatPackageMap map = new FormatPackageMap();
 
@@ -23,7 +27,7 @@ public class BundlesCalculator {
                 throw new Exception(orderItem.getOrderItemFormatCode() + " does not have matched format.");
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             System.exit(0);
         }
 
@@ -60,7 +64,7 @@ public class BundlesCalculator {
                 throw new Exception(orderItem.getOrderItemFormatCode() + " does not have suitable bundles.");
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             System.exit(0);
         }
 
