@@ -3,12 +3,11 @@ package com.gradle.codechallenge.model;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class FormatPackageMap {
 
-    Map<String, FormatPackage> formatPackageMap = new HashMap<>();
+    private final Map<String, FormatPackage> formatPackageMap = new HashMap<>();
 
-    public void setDefault() {
+    public void setDefaultFormatPackageMap() {
         FormatPackage img = new FormatPackage();
         img.setFormatCode("IMG");
         img.inputBundle(5, 450.0);
@@ -35,7 +34,8 @@ public class FormatPackageMap {
         formatPackageMap.put(formatPackage.getFormatCode(), formatPackage);
     }
 
-    public Map<String, FormatPackage> getFormatPackageMap() {
+    public Map<String, FormatPackage> getDefaultFormatPackageMap() {
+        setDefaultFormatPackageMap();
         return formatPackageMap;
     }
 }

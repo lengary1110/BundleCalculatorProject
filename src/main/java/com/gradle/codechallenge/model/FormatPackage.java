@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 public class FormatPackage {
 
-    String formatCode;
-    List<Bundle> BundleList = new ArrayList<>();
+    private String formatCode;
+    private List<Bundle> BundleList = new ArrayList<>();
 
     public void setFormatCode(String formatCode) {
         this.formatCode = formatCode;

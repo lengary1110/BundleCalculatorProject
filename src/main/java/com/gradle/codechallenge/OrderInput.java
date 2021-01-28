@@ -5,27 +5,11 @@ import com.gradle.codechallenge.model.OrderItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class OrderInput {
 
-    String inputFilename = "input.txt";
-    Scanner inputStream = null;
     private static final Logger logger = LogManager.getLogger(OrderInput.class);
-
-    public Scanner getInputStream() {
-
-        try {
-            inputStream = new Scanner(new FileInputStream(inputFilename));
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + inputFilename);
-            System.exit(0);
-        }
-        return inputStream;
-    }
 
     public Order getOrder(Scanner inputStream) {
 

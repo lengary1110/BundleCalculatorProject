@@ -2,9 +2,9 @@ package com.gradle.codechallenge.model;
 
 public class Bundle {
 
-    Integer bundleOption;
-    Double bundlePrice;
-    Integer requiredBundleNum = 0;
+    private Integer bundleOption;
+    private Double bundlePrice;
+    private Integer requiredBundleNum = 0;
 
     public Integer getBundleOption() {
         return bundleOption;
@@ -29,4 +29,5 @@ public class Bundle {
     public void addOneRequiredBundle() {
         requiredBundleNum++;
     }
+
 }
